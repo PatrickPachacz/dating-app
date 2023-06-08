@@ -25,7 +25,7 @@ International dating app which allows users to search and message other potentia
 
 # Dashboard 
 * Sidedrawer (navbar) allowing users to navigate between other features of app
-* Performs search engine which allows users to find others based on gender / age-range / and their country of origin
+* Performs search engine which allows users to find others based on gender / age-range / country of origin
 * Results that generate based on those specific criteria allows the viewer to access selected users profile page as well as directly message them
 <img src="dashboard.png" />
 <img src="matches.png" />
