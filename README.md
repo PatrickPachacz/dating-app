@@ -40,3 +40,12 @@ International dating app which allows users to search and message other potentia
 * User can also view recipients avatar
 ![search user](https://github.com/PatrickPachacz/dating-app/assets/123042779/663892ea-95da-4d10-9c16-5287380b6b22)
 ![Selecting user](https://github.com/PatrickPachacz/dating-app/assets/123042779/9965ca11-e703-44ff-8735-74622103b82f)
+
+# Chatbox - Real-time Messaging / Notification
+* Users can select which user they would like to communicate with
+* Recipients avatar which includes their basic information can be opened 
+* Message notifications will appear for users currently not engaged in the conversation
+
+![Chatbox](https://github.com/PatrickPachacz/dating-app/assets/123042779/fd8f2215-13f2-4aa3-bddb-f94b31572cf0)
+![notification](https://github.com/PatrickPachacz/dating-app/assets/123042779/173a26af-9195-4cfd-ac36-55a774071af3)
+
