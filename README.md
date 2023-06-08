@@ -43,6 +43,10 @@ International dating app which allows users to search and message other potentia
 ![search user](https://github.com/PatrickPachacz/dating-app/assets/123042779/663892ea-95da-4d10-9c16-5287380b6b22)
 ![Selecting user](https://github.com/PatrickPachacz/dating-app/assets/123042779/9965ca11-e703-44ff-8735-74622103b82f)
 
+# Edit Profile
+* Users can edit their name / image / or video at anytime
+<img src="edit.png" />
+
 # Chatbox - Real-time Messaging / Notification
 * Users can select which user they would like to communicate with
 * Recipients avatar which includes their basic information can be opened 
