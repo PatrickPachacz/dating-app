@@ -5,8 +5,10 @@ International dating app which allows users to search and message other potentia
 * Real Time Messaging using socket.io
 * Search users by name / gender / age-range / country of origin
 * Upload image + video of user which displays on profile page
+* Images and videos are also saved through cloudinary
 * Ability for user to update and change their picture and self video
 * Notification alert when receiving message
+* Applicable for smaller screens
 
 # In process
 * Currently adding message board to allow users to post messages + upload images regarding anything they want for other users to see (based on continental selection)
@@ -49,3 +51,5 @@ International dating app which allows users to search and message other potentia
 ![Chatbox](https://github.com/PatrickPachacz/dating-app/assets/123042779/fd8f2215-13f2-4aa3-bddb-f94b31572cf0)
 ![notification](https://github.com/PatrickPachacz/dating-app/assets/123042779/173a26af-9195-4cfd-ac36-55a774071af3)
 
+# Can be used on small screens 
+![small screen](https://github.com/PatrickPachacz/dating-app/assets/123042779/91c33f12-baff-449d-9b34-9de49aa744b1)
