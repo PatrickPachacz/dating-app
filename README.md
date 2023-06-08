@@ -37,4 +37,6 @@ International dating app which allows users to search and message other potentia
 * Search bar on left side of sidedrawer allows users to search by name or email
 * Selecting a user navigates them to the chatpage where they have a chatbox allocated and saved between both clients
 * After selecting and opening the chatbox between both users, they now have the ability to message one another
+* User can also view recipients avatar
 ![search user](https://github.com/PatrickPachacz/dating-app/assets/123042779/663892ea-95da-4d10-9c16-5287380b6b22)
+![Selecting user](https://github.com/PatrickPachacz/dating-app/assets/123042779/9965ca11-e703-44ff-8735-74622103b82f)
