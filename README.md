@@ -10,4 +10,8 @@ International dating app which allow users to search and message other potential
 
 ![Signup](https://github.com/PatrickPachacz/dating-app/assets/123042779/b24c0c01-84b0-49fc-9631-add5ee94a7ac)
 
-<h3>Signup</h3>
+<h3>Dashboard</h3>
+
+<h3>Profile Page</h3>
+
+![profile](https://github.com/PatrickPachacz/dating-app/assets/123042779/1cea7000-4e64-4444-916d-2ccc80462028)
