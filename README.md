@@ -19,7 +19,6 @@ International dating app which allows users to search and message other potentia
 * Brief information describing app outline and features to potential clients
 <img src="Homepage.png" />
 <img src="homepage2.png" />
-<img src="homepage3.png" />
 
 ![Signup](https://github.com/PatrickPachacz/dating-app/assets/123042779/b24c0c01-84b0-49fc-9631-add5ee94a7ac)
 
