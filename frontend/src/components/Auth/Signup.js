@@ -310,7 +310,7 @@ const Signup = () => {
         </Select>
       </FormControl>
       <FormControl>
-        <FormLabel>Video</FormLabel>
+        <FormLabel>Video: (Record and upload a video describing a little about yourself, and what you're looking for. Videos that include inappropriate content will be removed) </FormLabel>
         <Input
           type="file"
           accept="video/mp4"
