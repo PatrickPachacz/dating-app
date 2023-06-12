@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon backend/server.js",
-    "build": "npm run compile"
+    "build": "npm start"
   },
   "author": "Patrick Pachacz",
   "license": "ISC",
