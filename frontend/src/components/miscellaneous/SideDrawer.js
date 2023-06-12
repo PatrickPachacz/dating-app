@@ -1,4 +1,5 @@
 import { Button } from "@chakra-ui/button";
+import { Badge } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/hooks";
 import { Input } from "@chakra-ui/input";
 import { Box, Text, Flex } from "@chakra-ui/layout";
@@ -26,8 +27,6 @@ import { useToast } from "@chakra-ui/toast";
 import ChatLoading from "../ChatLoading";
 import { Spinner } from "@chakra-ui/spinner";
 import ProfileModal from "./ProfileModal";
-import NotificationBadge from "react-notification-badge";
-import { Effect } from "react-notification-badge";
 import { getSender } from "../../config/ChatLogics";
 import UserListItem from "../UserAvatar/UserListItem";
 import { ChatState } from "../../Context/ChatProvider";
@@ -274,10 +273,20 @@ function SideDrawer() {
         <div>
           <Menu>
             <MenuButton p={1}>
-              <NotificationBadge
-                count={notification.length}
-                effect={Effect.SCALE}
-              />
+            {notification.length > 0 && (
+            <Badge
+              colorScheme="red"  // Customize the badge color here
+              fontSize="0.8em"   // Customize the badge font size here
+              borderRadius="full"
+              px={2}
+              py={1}
+              position="absolute"
+              top="-8px"
+              right="-8px"
+            >
+              {notification.length}
+            </Badge>
+          )}
               <BellIcon fontSize="2xl" m={1} />
             </MenuButton>
             <MenuList color="black" bg="white" pl={2}>
