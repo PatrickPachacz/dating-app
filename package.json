@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon backend/server.js"
+    "start": "nodemon backend/server.js",
+    "build": "echo 'Backend build command'"
   },
   "author": "Patrick Pachacz",
   "license": "ISC",
