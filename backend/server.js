@@ -5,7 +5,7 @@ const userRoutes = require("./routes/userRoutes");
 const chatRoutes = require("./routes/chatRoutes");
 const messageRoutes = require("./routes/messageRoutes");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
-
+const path = require("path");
 
 dotenv.config();
 connectDB();
@@ -43,7 +43,7 @@ const server = app.listen(
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "https://passportmatch-app.onrender.com",
+    origin: "http://localhost:3000",
     // credentials: true,
   },
 });
