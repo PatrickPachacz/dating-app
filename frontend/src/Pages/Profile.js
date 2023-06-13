@@ -20,7 +20,7 @@ function Profile() {
 
   useEffect(() => {
     async function getUser() {
-      const response = await fetch(`/api/user/${id}`);
+      const response = await fetch(`https://passportmatch-app.onrender.com/api/user/${id}`);
       const data = await response.json();
       setName(data.name);
       setGender(data.gender);
