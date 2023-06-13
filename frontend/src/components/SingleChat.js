@@ -27,15 +27,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   const [istyping, setIsTyping] = useState(false);
   const toast = useToast();
 
-  {/*const defaultOptions = {
-    animationData: animationData,
-    loop: true,
-    autoplay: true,
-    style: {
-      marginBottom: 5,
-      marginLeft: 0
-    }
-  }; */}
+
   const { selectedChat, setSelectedChat, user, notification, setNotification } =
     ChatState();
 

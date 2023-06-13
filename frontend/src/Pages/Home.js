@@ -95,16 +95,16 @@ const Home = () => {
             </section>
 
             <section class="social-media">
-                <a href="https://www.facebook.com/yourpage" target="_blank">
+                <a href="https://www.facebook.com/yourpage" rel="noopener noreferrer" target="_blank">
                     <img width="50" height="50" viewBox="0 0 24 24" fill="none" src="https://cdn.iconscout.com/icon/free/png-256/facebook-social-media-fb-logo-square-44659.png" alt="couple"/>
                 </a>
-                <a href="https://www.youtube.com/channel/yourchannel" target="_blank">
+                <a href="https://www.youtube.com/channel/yourchannel" rel="noopener noreferrer" target="_blank">
                     <img width="50" height="50" viewBox="0 0 24 24" fill="none" src="https://cdn.iconscout.com/icon/free/png-256/youtube-1464540-1239451.png" alt="couple"/>
                 </a>
-                <a href="https://www.tiktok.com/@yourhandle" target="_blank">
+                <a href="https://www.tiktok.com/@yourhandle" rel="noopener noreferrer" target="_blank">
                     <img width="50" height="50" viewBox="0 0 24 24" fill="none" src="https://cdn.iconscout.com/icon/free/png-256/tiktok-2270636-1891163.png" alt="couple"/>
                 </a>
-                <a href="https://www.instagram.com/yourpage" target="_blank">
+                <a href="https://www.instagram.com/yourpage" rel="noopener noreferrer" target="_blank">
                     <img width="50" height="50" viewBox="0 0 24 24" fill="none" src="https://cdn.iconscout.com/icon/free/png-256/instagram-86-433323.png" alt="couple"/> 
                 </a>
             

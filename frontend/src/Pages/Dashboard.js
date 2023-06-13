@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useMatch, useResolvedPath, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SideDrawer from "../components/miscellaneous/SideDrawer";
 import { ChatState } from "../Context/ChatProvider";
 import axios from "axios";
@@ -241,17 +241,4 @@ export default function Dashboard() {
       )}
     </main>
   );
-}
-
-function CustomLink({ to, children, ...props }) {
-  const resolvedPath = useResolvedPath(to)
-  const isActive = useMatch({ path: resolvedPath.pathname, end:true })
-
-  return (
-    <li className={isActive ? "active" : ""}>
-      <Link to={to} {...props}>
-        {children}
-      </Link>
-    </li>
-  )
 }
