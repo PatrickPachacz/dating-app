@@ -72,7 +72,7 @@ const Signup = () => {
         },
       };
       const { data } = await axios.post(
-        "/api/user",
+        "https://passportmatch-app.onrender.com/api/user",
         {
           name,
           email,
