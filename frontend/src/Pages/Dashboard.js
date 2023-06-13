@@ -75,7 +75,9 @@ export default function Dashboard() {
         country,
       };
 
-      const { data } = await axios.get("/api/user", {
+      const { data } = await axios.get(
+        'https://passportmatch-app.onrender.com/api/user',
+         {
         params,
         ...config,
       });
@@ -114,7 +116,8 @@ export default function Dashboard() {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.post(`/api/chat`, { userId }, config);
+      const { data } = await axios.post(
+        'https://passportmatch-app.onrender.com/api/chat', { userId }, config);
   
       if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
   
