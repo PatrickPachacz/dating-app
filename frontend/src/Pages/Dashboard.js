@@ -11,19 +11,16 @@ import { Button } from "@chakra-ui/button";
 import { Image } from "@chakra-ui/react";
 
 export default function Dashboard() {
-  const [search ] = useState("");
+  const [search, setSearch] = useState("");
   const [gender, setGender] = useState("");
   const [minAge, setMinAge] = useState("");
   const [maxAge, setMaxAge] = useState("");
   const [country, setCountry] = useState("");
   const [searchResult, setSearchResult] = useState([]);
-  const [setLoading] = useState(false);
-  const [setLoadingChat] = useState(false);
-  const [setSelectedUser] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [loadingChat, setLoadingChat] = useState(false);
   const { user, chats, setChats } = ChatState();
-    
-  console.log(user)
-  
+
   const toast = useToast();
   const { onClose } = useDisclosure();
   const navigate = useNavigate();
@@ -42,6 +39,10 @@ export default function Dashboard() {
 
   const handleMaxAgeChange = (event) => {
     setMaxAge(event.target.value);
+  };
+
+  const handleSearchChange = (event) => {
+    setSearch(event.target.value);
   };
 
   const handleSubmit = async (event) => {
@@ -77,12 +78,12 @@ export default function Dashboard() {
 
       const { data } = await axios.get(
         'https://passportmatch-app.onrender.com/api/user',
-         {
-        params,
-        ...config,
-      });
+        {
+          params,
+          ...config,
+        }
+      );
 
-      setLoading(false);
       setSearchResult(data);
     } catch (error) {
       toast({
@@ -93,6 +94,8 @@ export default function Dashboard() {
         isClosable: true,
         position: "bottom-left",
       });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -101,7 +104,10 @@ export default function Dashboard() {
     const today = new Date();
     let age = today.getFullYear() - birthDate.getFullYear();
     const monthDifference = today.getMonth() - birthDate.getMonth();
-    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+    if (
+      monthDifference < 0 ||
+      (monthDifference === 0 && today.getDate() < birthDate.getDate())
+    ) {
       age--;
     }
     return age;
@@ -116,18 +122,17 @@ export default function Dashboard() {
           Authorization: `Bearer ${user.token}`,
         },
       };
+
       const { data } = await axios.post(
-        'https://passportmatch-app.onrender.com/api/chat', { userId }, config);
-  
+        'https://passportmatch-app.onrender.com/api/chat',
+        { userId },
+        config
+      );
+
       if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
-  
-      // Set the selected user ID
-      setSelectedUser(userId);
-  
-      setLoadingChat(false);
+
       onClose();
-  
-      // Navigate to the chat page
+
       navigate("/chats");
     } catch (error) {
       toast({
@@ -138,14 +143,20 @@ export default function Dashboard() {
         isClosable: true,
         position: "bottom-left",
       });
+    } finally {
+      setLoadingChat(false);
     }
   };
 
   return (
     <main>
       <div className="imageWrapper">
-        <img src="https://images.pexels.com/photos/592753/pexels-photo-592753.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="background" className="imageHome"/>
-        
+        <img
+          src="https://images.pexels.com/photos/592753/pexels-photo-592753.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          alt="background"
+          className="imageHome"
+        />
+
         <div style={{ width: "100%" }}>
           {user && <SideDrawer />}
         </div>
@@ -188,7 +199,7 @@ export default function Dashboard() {
           placeholder="Min Age"
         />
 
-        <label className="labelMatches" htmlFor="maxAge">
+        <label className="" htmlFor="maxAge">
           Maximum Age:
         </label>
         <input
@@ -199,12 +210,26 @@ export default function Dashboard() {
           placeholder="Max Age"
         />
 
+        <label className="" htmlFor="search">
+          Search by name
+        </label>
+        <input
+          type="text"
+          id="search"
+          value={search}
+          onChange={handleSearchChange}
+          placeholder="Search"
+          className="inputMatches"
+        />
+
         <button type="submit">Submit</button>
       </form>
 
       <h2>Matched Users:</h2>
-    
-      {searchResult.length > 0 ? (
+
+      {loading ? (
+        <p>Loading...</p>
+      ) : searchResult.length > 0 ? (
         <ul className="user-list">
           {searchResult.map((user) => (
             <li key={user._id} className="user-card">
@@ -212,7 +237,7 @@ export default function Dashboard() {
                 countryCode={user.country}
                 svg
                 className="flagMatches"
-                style={{ width: '300px', height: '200px' }}
+                style={{ width: "300px", height: "200px" }}
               />
               <Image
                 marginTop="-10px"
@@ -223,24 +248,38 @@ export default function Dashboard() {
                 opacity="0.9"
                 src={user.pic}
               />
-              <div style={{ marginTop: '10px' }}>
+              <div style={{ marginTop: "10px" }}>
                 <h2>Name: {user.name}</h2>
                 <h2>Country: {user.country}</h2>
                 <h2>Age: {calculateAge(user.dob)}</h2>
                 <h2>Gender: {user.gender}</h2>
                 <h2>Looking for: {user.genderPreference}</h2>
-                <Button colorScheme='teal' variant='solid' mt={4} ml={4} onClick={() => accessChat(user._id)}>Message</Button> 
                 <Link to={`/Profile/${user._id}`}>
-                  <Button colorScheme="teal" variant="solid" mt={4} ml={5}>
+                  <Button
+                    colorScheme="teal"
+                    variant="outline"
+                    marginTop="10px"
+                  >
                     View Profile
                   </Button>
                 </Link>
+                <Button
+                  colorScheme="teal"
+                  variant="outline"
+                  marginTop="10px"
+                  marginLeft="10px"
+                  onClick={() => accessChat(user._id)}
+                  isLoading={loadingChat}
+                  disabled={loadingChat}
+                >
+                  {loadingChat ? "Accessing Chat" : "Access Chat"}
+                </Button>
               </div>
             </li>
           ))}
         </ul>
       ) : (
-        <p>No users found.</p>
+        <p>No matching users found.</p>
       )}
     </main>
   );
