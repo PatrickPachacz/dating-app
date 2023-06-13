@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { Link, useMatch, useResolvedPath, useNavigate } from "react-router-dom";
 import SideDrawer from "../components/miscellaneous/SideDrawer";
 import { ChatState } from "../Context/ChatProvider";
@@ -11,35 +11,22 @@ import { Button } from "@chakra-ui/button";
 import { Image } from "@chakra-ui/react";
 
 export default function Dashboard() {
-  const [search, setSearch] = useState("");
+  const [search ] = useState("");
   const [gender, setGender] = useState("");
   const [minAge, setMinAge] = useState("");
   const [maxAge, setMaxAge] = useState("");
   const [country, setCountry] = useState("");
   const [searchResult, setSearchResult] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [loadingChat, setLoadingChat] = useState(false);
-  const [selectedUser, setSelectedUser] = useState(null);
-  const { setSelectedChat, user, children, setUser, chats, setChats } = ChatState();
+  const [setLoading] = useState(false);
+  const [setLoadingChat] = useState(false);
+  const [setSelectedUser] = useState(null);
+  const { user, chats, setChats } = ChatState();
     
   console.log(user)
-
-  function handleOpeningSearchClick() {
-    window.location.href = 'GenMessageBoard';
-  }
-
-  function handleOpeningSearchUsersClick() {
-    window.location.href = 'ViewMatches';
-  }
   
   const toast = useToast();
   const { onClose } = useDisclosure();
   const navigate = useNavigate();
-
-  const navigateToChats = () => {
-    navigate("/chats");
-  };
-
 
   const handleGenderChange = (event) => {
     setGender(event.target.value);
@@ -154,7 +141,7 @@ export default function Dashboard() {
   return (
     <main>
       <div className="imageWrapper">
-        <img src="https://images.pexels.com/photos/592753/pexels-photo-592753.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" className="imageHome"/>
+        <img src="https://images.pexels.com/photos/592753/pexels-photo-592753.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="background" className="imageHome"/>
         
         <div style={{ width: "100%" }}>
           {user && <SideDrawer />}

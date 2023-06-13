@@ -8,7 +8,7 @@ import { ChatState } from "../Context/ChatProvider";
 function Profile() {
   const { id } = useParams();
   const [name, setName] = useState("");
-  const [dob, setDob] = useState("");
+  const [setDob] = useState("");
   const [gender, setGender] = useState("");
   const [genderPreference, setGenderPreference] = useState("");
   const [country, setCountry] = useState("");

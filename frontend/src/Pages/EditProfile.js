@@ -12,8 +12,8 @@ const EditProfile = () => {
   const { id } = useParams();
   const [pic, setPic] = useState("");
   const [video, setVideo] = useState("");
-  const [picModified, setPicModified] = useState(false);
-  const [videoModified, setVideoModified] = useState(false);
+  const [setPicModified] = useState(false);
+  const [setVideoModified] = useState(false);
   const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
   const { user } = ChatState();
@@ -153,6 +153,7 @@ const EditProfile = () => {
       <img
         src="https://images.pexels.com/photos/592753/pexels-photo-592753.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
         className="imageHome"
+        alt="background"
         style={{ width: "100%" }}
       />
 

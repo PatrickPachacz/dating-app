@@ -3,7 +3,6 @@ import './viewmatches.scss'
 import { Route, Routes } from "react-router-dom"
 import Home from './Pages/Home';
 import ChatPage from './Pages/Chatpage';
-import Contact from "./Pages/Contact";
 import Dashboard from './Pages/Dashboard';
 import Profile from "./Pages/Profile";
 import EditProfile from "./Pages/EditProfile";
@@ -18,7 +17,6 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/chats' element={<ChatPage />} />
-          <Route path="/contact" element={<Contact />} />
           <Route path="/Profile/:id" element={<Profile />} />
           <Route path="/EditProfile/:id" element={<EditProfile />} />
         </Routes>

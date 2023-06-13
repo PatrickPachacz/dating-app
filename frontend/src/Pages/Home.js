@@ -17,7 +17,7 @@ const Home = () => {
 
     <main className="image-container">
     <div className="imageWrapper">
-        <img src="https://cdn.pixabay.com/photo/2018/11/06/14/01/couple-3798371_1280.jpg" className="imageHome" />
+        <img src="https://cdn.pixabay.com/photo/2018/11/06/14/01/couple-3798371_1280.jpg" className="imageHome" alt="background" />
     </div>
 
     <Container maxW='xl' centerContent>
@@ -70,19 +70,19 @@ const Home = () => {
                 <h2>What Our Users Say</h2>
                 <div class="testimonial-container">
                     <div class="testimonial">
-                    <img className="testImg" src="https://media.istockphoto.com/id/806165312/es/foto/feliz-pareja-caminando-y-hablando-en-el-campo.jpg?s=612x612&w=0&k=20&c=SfmB1gz5C9vD6Gcku02QC6xaGMlNtXFkDtU_JBsKre8=" />
+                    <img className="testImg" src="https://media.istockphoto.com/id/806165312/es/foto/feliz-pareja-caminando-y-hablando-en-el-campo.jpg?s=612x612&w=0&k=20&c=SfmB1gz5C9vD6Gcku02QC6xaGMlNtXFkDtU_JBsKre8=" alt="test" />
                     <h1>USA - Thailand</h1>
                     <p>"I met my current wife after years of no success in previous relationships. Amara showed me a whole new world. Despite the cultural barriers in the beginning, we have learned so much together."</p>
                     <h4>Billy Sullivan - Amara</h4>
                     </div>
                     <div class="testimonial">
-                    <img className="testImg" src="https://images.unsplash.com/photo-1501631259223-89d4e246ed23?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aGlzcGFuaWMlMjBjb3VwbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60" />
+                    <img className="testImg" src="https://images.unsplash.com/photo-1501631259223-89d4e246ed23?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aGlzcGFuaWMlMjBjb3VwbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60" alt="test"/>
                     <h1>Argentina - Germany</h1>
                     <p>"This app has been a game changer for me. After going back and forth for some time between our two countries, I ultimately decided to settle near her home. We have the option to move together to Europe. It may not have been so easy at first, but I am much happier here in Peru where we are finally together."</p>
                     <h4>Daniel - Mercedes</h4>
                     </div>
                     <div class="testimonial">
-                    <img className="testImg" src="https://image-tc.galaxy.tf/wijpeg-ajhl1elx873ldtubcxr6a9nj4/bushmans-nek-couple-s-getaway_standard.jpg?crop=160%2C0%2C1600%2C1200&width=1800"/>
+                    <img className="testImg" src="https://image-tc.galaxy.tf/wijpeg-ajhl1elx873ldtubcxr6a9nj4/bushmans-nek-couple-s-getaway_standard.jpg?crop=160%2C0%2C1600%2C1200&width=1800" alt="test"/>
                     <h1>England - South Africa</h1>
                     <p>"I was in a part of my life where I was successful in everything but love. I have traveled around the world regularly and finally found my someone. She is everything I look for in a true companion and the intial challenges we faced only made us stronger."</p>
                     <h4>Henry</h4>
@@ -91,21 +91,21 @@ const Home = () => {
             </section>
 
             <section className="imgCoupleSitting">
-                <img src="https://cdn.pixabay.com/photo/2018/05/30/15/31/globe-3441673_1280.jpg" className="imgCoupleSitting" />
+                <img src="https://cdn.pixabay.com/photo/2018/05/30/15/31/globe-3441673_1280.jpg" alt="couple" className="imgCoupleSitting" />
             </section>
 
             <section class="social-media">
                 <a href="https://www.facebook.com/yourpage" target="_blank">
-                    <img width="50" height="50" viewBox="0 0 24 24" fill="none" src="https://cdn.iconscout.com/icon/free/png-256/facebook-social-media-fb-logo-square-44659.png" />
+                    <img width="50" height="50" viewBox="0 0 24 24" fill="none" src="https://cdn.iconscout.com/icon/free/png-256/facebook-social-media-fb-logo-square-44659.png" alt="couple"/>
                 </a>
                 <a href="https://www.youtube.com/channel/yourchannel" target="_blank">
-                    <img width="50" height="50" viewBox="0 0 24 24" fill="none" src="https://cdn.iconscout.com/icon/free/png-256/youtube-1464540-1239451.png"/>
+                    <img width="50" height="50" viewBox="0 0 24 24" fill="none" src="https://cdn.iconscout.com/icon/free/png-256/youtube-1464540-1239451.png" alt="couple"/>
                 </a>
                 <a href="https://www.tiktok.com/@yourhandle" target="_blank">
-                    <img width="50" height="50" viewBox="0 0 24 24" fill="none" src="https://cdn.iconscout.com/icon/free/png-256/tiktok-2270636-1891163.png"/>
+                    <img width="50" height="50" viewBox="0 0 24 24" fill="none" src="https://cdn.iconscout.com/icon/free/png-256/tiktok-2270636-1891163.png" alt="couple"/>
                 </a>
                 <a href="https://www.instagram.com/yourpage" target="_blank">
-                    <img width="50" height="50" viewBox="0 0 24 24" fill="none" src="https://cdn.iconscout.com/icon/free/png-256/instagram-86-433323.png"/> 
+                    <img width="50" height="50" viewBox="0 0 24 24" fill="none" src="https://cdn.iconscout.com/icon/free/png-256/instagram-86-433323.png" alt="couple"/> 
                 </a>
             
             </section>
