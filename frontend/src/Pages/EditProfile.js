@@ -24,7 +24,7 @@ const EditProfile = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get(`/api/user/${id}`);
+        const response = await axios.get(`https://passportmatch-app.onrender.com/api/user/${id}`);
         const userData = response.data;
         setName(userData.name);
         setPic(userData.pic);
@@ -125,7 +125,7 @@ const EditProfile = () => {
         },
       };
 
-      await axios.put(`/api/user/${id}`, updatedData, config);
+      await axios.put(`https://passportmatch-app.onrender.com/api/user/${id}`, updatedData, config);
       setLoading(false);
       toast({
         title: "Profile updated successfully",
