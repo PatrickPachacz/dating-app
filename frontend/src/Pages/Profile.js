@@ -8,7 +8,6 @@ import { ChatState } from "../Context/ChatProvider";
 function Profile() {
   const { id } = useParams();
   const [name, setName] = useState("");
-  const [setDob] = useState("");
   const [gender, setGender] = useState("");
   const [genderPreference, setGenderPreference] = useState("");
   const [country, setCountry] = useState("");
@@ -24,7 +23,6 @@ function Profile() {
       const response = await fetch(`/api/user/${id}`);
       const data = await response.json();
       setName(data.name);
-      setDob(data.dob);
       setGender(data.gender);
       setGenderPreference(data.genderPreference);
       setCountry(data.country);
