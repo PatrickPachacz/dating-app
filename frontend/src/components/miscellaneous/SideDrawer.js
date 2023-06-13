@@ -98,7 +98,7 @@ function SideDrawer() {
         },
       };
 
-      const { data } = await axios.get("https://passportmatch-app.onrender.com/api/user?search=${search}", config);
+      const { data } = await axios.get(`https://passportmatch-app.onrender.com/api/user?search=${search}`, config);
 
       setLoading(false);
       setSearchResult(data);
