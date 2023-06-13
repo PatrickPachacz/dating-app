@@ -5,7 +5,7 @@ const userRoutes = require("./routes/userRoutes");
 const chatRoutes = require("./routes/chatRoutes");
 const messageRoutes = require("./routes/messageRoutes");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
-const path = require("path");
+const cors = require("cors"); // Import the cors module
 
 dotenv.config();
 connectDB();
@@ -19,6 +19,10 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Headers", "Content-Type"); // Add this line
   next();
 });
+
+app.use(cors({
+  allowedHeaders: ["Content-Type", "Authorization"], // Include the "Authorization" header
+}));
 
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
