@@ -294,6 +294,7 @@ const Signup = () => {
         >
           <option value="male">Male</option>
           <option value="female">Female</option>
+          <option value="female">Other</option>
         </Select>
       </FormControl>
 
@@ -307,6 +308,7 @@ const Signup = () => {
           <option value="male">Male</option>
           <option value="female">Female</option>
           <option value="both">Both</option>
+          <option value="both">Other</option>
         </Select>
       </FormControl>
       <FormControl>
