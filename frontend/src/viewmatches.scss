@@ -69,13 +69,13 @@ h1 {
       height: 400px;
       padding: 1%;
       margin: 30px;
-      color: white;
-      background-color: #f7f7f7;
+      color: teal;
+      background-color: #000000;
       margin-bottom: 10px;
       border-radius: 25px;
       box-sizing: border-box;
-      border-left: 2px solid rgb(255, 254, 254);
-      border-right: 2px solid rgb(255, 255, 255);
+      border-left: 2px solid rgb(0, 0, 0);
+      border-right: 2px solid rgb(0, 0, 0);
       background-color: black;
       position: relative; /* Add this property to make the flag positioned relative to the card */
       overflow: hidden; /* Add this property to hide any overflow from the flag */
@@ -98,6 +98,6 @@ h1 {
   width: 100%; /* Make the flag cover the entire width of the card */
   height: 100%; /* Make the flag cover the entire height of the card */
   object-fit: cover; /* Maintain aspect ratio and cover the entire area */
-  border: 1px solid rgb(150, 40, 40)
+  border: 1px solid rgb(0, 0, 0)
   }
 
