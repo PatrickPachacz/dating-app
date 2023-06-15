@@ -27,7 +27,7 @@ International dating app which allows users to search and message other potentia
 * Performs search engine which allows users to find others based on gender / age-range / country of origin
 * Results that generate based on those specific criteria allows the viewer to access selected users profile page as well as directly message them
 <img src="dashboard.png" />
-<img src="matches.png" />
+<img src="realmatches.png" />
 
 # Profile Page
 * Display users basic information along with their image and personal video
