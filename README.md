@@ -1,5 +1,5 @@
 # dating-app
-International dating app which allows users to search and message other potential matches from across the globe. App built using MERN (data stored in Mongo DB). 
+International dating app which allows users to search and message other potential matches from across the globe. App built using MERN (data stored in Mongo DB). You can access the demo and sign up on the site here: https://passportmatch.netlify.app
 
 # App Features
 * Real Time Messaging using socket.io
