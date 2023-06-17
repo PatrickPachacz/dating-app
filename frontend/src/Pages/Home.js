@@ -71,19 +71,19 @@ const Home = () => {
                 <div class="testimonial-container">
                     <div class="testimonial">
                     <img className="testImg" src="https://media.istockphoto.com/id/806165312/es/foto/feliz-pareja-caminando-y-hablando-en-el-campo.jpg?s=612x612&w=0&k=20&c=SfmB1gz5C9vD6Gcku02QC6xaGMlNtXFkDtU_JBsKre8=" alt="test" />
-                    <h1>USA - Thailand</h1>
+                    <h1 className="testh1">USA - Thailand</h1>
                     <p>"I met my current wife after years of no success in previous relationships. Amara showed me a whole new world. Despite the cultural barriers in the beginning, we have learned so much together."</p>
                     <h4>Billy Sullivan - Amara</h4>
                     </div>
                     <div class="testimonial">
                     <img className="testImg" src="https://images.unsplash.com/photo-1501631259223-89d4e246ed23?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aGlzcGFuaWMlMjBjb3VwbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60" alt="test"/>
-                    <h1>Argentina - Germany</h1>
+                    <h1 className="testh1">Argentina - Germany</h1>
                     <p>"This app has been a game changer for me. After going back and forth for some time between our two countries, I ultimately decided to settle near her home. We have the option to move together to Europe. It may not have been so easy at first, but I am much happier here in Argentina where we are finally together."</p>
                     <h4>Daniel - Mercedes</h4>
                     </div>
                     <div class="testimonial">
                     <img className="testImg" src="https://image-tc.galaxy.tf/wijpeg-ajhl1elx873ldtubcxr6a9nj4/bushmans-nek-couple-s-getaway_standard.jpg?crop=160%2C0%2C1600%2C1200&width=1800" alt="test"/>
-                    <h1>England - South Africa</h1>
+                    <h1 className="testh1">England - South Africa</h1>
                     <p>"I was in a part of my life where I was successful in everything but love. I have traveled around the world regularly and finally found my someone. She is everything I look for in a true companion and the intial challenges we faced only made us stronger."</p>
                     <h4>Henry</h4>
                     </div>

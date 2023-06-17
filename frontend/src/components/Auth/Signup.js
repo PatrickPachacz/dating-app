@@ -307,7 +307,7 @@ const Signup = () => {
         >
           <option value="male">Male</option>
           <option value="female">Female</option>
-          <option value="both">Both</option>
+          <option value="both">Bisexual</option>
           <option value="both">Other</option>
         </Select>
       </FormControl>

@@ -65,6 +65,7 @@ function Profile() {
           flexDirection: "column",
           alignItems: "center",
           textAlign: "center",
+          opacity: "0.9"
         }}
       >
         <ReactCountryFlag
@@ -90,35 +91,35 @@ function Profile() {
           style={{ margin: "30px 0px 50px" }}
         />
         <div
-        className="profileInfo"
-        style={{
-          maxWidth: "500px",
-          margin: "0 auto",
-          background: "black",
-          padding: "20px",
-          borderRadius: "4px",
-          marginTop: "30px",
-          position: "relative",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          textAlign: "center",
-          opacity: 0.5,
-        }}
-      >
-        <p style={{ margin: "10px 0" }}>Age: {age}</p>
-        <p style={{ margin: "10px 0" }}>Country: {country}</p>
-        <p style={{ margin: "10px 0" }}>Gender: {gender}</p>
-        <p style={{ margin: "10px 0" }}>Interested in: {genderPreference}</p>
+          className="profileInfo"
+          style={{
+            maxWidth: "500px",
+            margin: "0 auto",
+            background: "black",
+            padding: "20px",
+            borderRadius: "4px",
+            marginTop: "30px",
+            position: "relative",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
+          }}
+        >
+          <p style={{ margin: "10px 0" }}>Age: {age}</p>
+          <p style={{ margin: "10px 0" }}>Country: {country}</p>
+          <p style={{ margin: "10px 0" }}>Gender: {gender}</p>
+          <p style={{ margin: "10px 0" }}>Interested in: {genderPreference}</p>
         </div>
-        {video && (
+        {video ? (
           <Box mt={3}>
-            
             <video width="40%" style={{ margin: "90px 0" }} controls className="videoContainer">
               <source src={video} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </Box>
+        ) : (
+          <Box mt={3} height="400px" />
         )}
       </div>
     </main>

@@ -77,12 +77,13 @@
   
   .testimonial {
 	background-color: black;
-	border-left: 1px solid red;
-	border-right: 1px solid red;
+	border-left: 1px solid rgb(16, 15, 15);
+	border-right: 1px solid rgb(16, 15, 15);
+	color: rgb(83, 166, 166);
 	border-radius: 40px;
 	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 	padding: 20px;
-	text-align: left;
+	text-align: center;
   }
   
   .testimonial p {
