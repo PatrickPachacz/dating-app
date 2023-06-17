@@ -78,7 +78,7 @@ const Home = () => {
                     <div class="testimonial">
                     <img className="testImg" src="https://images.unsplash.com/photo-1501631259223-89d4e246ed23?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8aGlzcGFuaWMlMjBjb3VwbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60" alt="test"/>
                     <h1>Argentina - Germany</h1>
-                    <p>"This app has been a game changer for me. After going back and forth for some time between our two countries, I ultimately decided to settle near her home. We have the option to move together to Europe. It may not have been so easy at first, but I am much happier here in Peru where we are finally together."</p>
+                    <p>"This app has been a game changer for me. After going back and forth for some time between our two countries, I ultimately decided to settle near her home. We have the option to move together to Europe. It may not have been so easy at first, but I am much happier here in Argentina where we are finally together."</p>
                     <h4>Daniel - Mercedes</h4>
                     </div>
                     <div class="testimonial">

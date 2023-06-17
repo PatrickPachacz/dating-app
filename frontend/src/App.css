@@ -99,8 +99,10 @@
   
   .imgCoupleSitting {
 	width: 100%;
-	height: 700px;
+	height: 500px;
+	position: relative;
   }
+  
   
   .social-media {
 	display: flex;
