@@ -294,21 +294,20 @@ const Signup = () => {
         >
           <option value="male">Male</option>
           <option value="female">Female</option>
-          <option value="female">Other</option>
+          <option value="other">Other</option>
         </Select>
       </FormControl>
 
       <FormControl id="genderPreference" isRequired>
-        <FormLabel>Gender Preference</FormLabel>
+        <FormLabel>What are you looking for?</FormLabel>
         <Select
-          placeholder="Select gender preference"
+          placeholder="Select"
           value={genderPreference}
           onChange={(e) => setGenderPreference(e.target.value)}
         >
           <option value="male">Male</option>
           <option value="female">Female</option>
-          <option value="both">Bisexual</option>
-          <option value="both">Other</option>
+          <option value="other">Other</option>
         </Select>
       </FormControl>
       <FormControl>
