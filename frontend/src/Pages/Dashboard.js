@@ -152,7 +152,7 @@ export default function Dashboard() {
     <main>
       <div className="imageWrapper">
         <img
-          src="https://images.pexels.com/photos/592753/pexels-photo-592753.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          src="./images/worldmap.jpeg"
           alt="background"
           className="imageHome"
         />
