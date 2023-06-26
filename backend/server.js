@@ -21,10 +21,8 @@ app.use((req, res, next) => {
 });
 
 app.use(cors({
-  origin: "https://passportmatch-app.onrender.com",
-  allowedHeaders: ["Content-Type", "Authorization"],
+  allowedHeaders: ["Content-Type", "Authorization"], // Include the "Authorization" header
 }));
-
 
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
