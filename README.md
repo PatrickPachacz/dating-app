@@ -17,8 +17,8 @@ International dating app which allows users to search and message other potentia
 # Homepage
 * Login / Signup built in component - allows users to add information ranging from country of origin and age to their personal image and video
 * Brief information describing app outline and features to potential clients
-<img src="Homepage.png" />
-<img src="homepage2.png" />
+<img src="screenshots/Homepage.png" />
+<img src="screenshots/homepage2.png" />
 
 ![Signup](https://github.com/PatrickPachacz/dating-app/assets/123042779/b24c0c01-84b0-49fc-9631-add5ee94a7ac)
 
@@ -26,8 +26,8 @@ International dating app which allows users to search and message other potentia
 * Sidedrawer (navbar) allowing users to navigate between other features of app
 * Performs search engine which allows users to find others based on gender / age-range / country of origin
 * Results that generate based on those specific criteria allows the viewer to access selected users profile page as well as directly message them
-<img src="dashboard.png" />
-<img src="realmatches.png" />
+<img src="screenshots/dashboard.png" />
+<img src="screenshots/realmatches.png" />
 
 # Profile Page
 * Display users basic information along with their image and personal video
@@ -44,7 +44,7 @@ International dating app which allows users to search and message other potentia
 
 # Edit Profile
 * Users can edit their name / image / or video at anytime
-<img src="edit.png" />
+<img src="screenshots/edit.png" />
 
 # Chatbox - Real-time Messaging / Notification
 * Users can select which user they would like to communicate with
