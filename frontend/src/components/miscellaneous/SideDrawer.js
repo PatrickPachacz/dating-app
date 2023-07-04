@@ -52,6 +52,12 @@ function SideDrawer() {
     navigate("/chats");
   };
 
+  const navigateToChat = (chat) => {
+    setSelectedChat(chat);
+    setNotification(notification.filter((n) => n.chat._id !== chat._id));
+    navigate("/chats"); // Navigate to the chat page
+  };
+
   const navigateToProfile = () => {
     navigate(`/Profile/${user._id}`);
   };
@@ -277,7 +283,7 @@ function SideDrawer() {
               borderRadius="full"
               px={2}
               py={1}
-              position="absolute"
+              position="relative"
               top="-8px"
               right="-8px"
             >
@@ -291,11 +297,8 @@ function SideDrawer() {
               {notification.map((notif) => (
                 <MenuItem
                   key={notif._id}
-                  onClick={() => {
-                    setSelectedChat(notif.chat);
-                    setNotification(notification.filter((n) => n !== notif));
-                  }}
-                >
+                   onClick={() => navigateToChat(notif.chat)} // Call navigateToChat function with the selected chat
+              >
                   {notif.chat.isGroupChat
                     ? `New Message in ${notif.chat.chatName}`
                     : `New Message from ${getSender(user, notif.chat.users)}`}
