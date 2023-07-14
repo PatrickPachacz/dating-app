@@ -158,10 +158,11 @@ function SideDrawer() {
       justifyContent="space-between"
       alignItems="center"
       bg="black"
-      p="5px 30px"
-      color="white"
+      p="10px 30px"
+      color="orange"
       borderWidth="5px"
       flexWrap="wrap"
+      border="3px solid grey"
     >
       <Box
         flex={{ base: "1", md: "auto" }}
@@ -170,7 +171,7 @@ function SideDrawer() {
         flexGrow="1"
       >
         <Tooltip label="Search Users to chat" hasArrow placement="bottom-end">
-          <Button variant="ghost" onClick={onOpen} _hover={{ color: "grey" }}>
+          <Button variant="ghost" color="orange" onClick={onOpen} _hover={{ color: "purple" }}>
             <i className="fas fa-search"></i>
             <Text d={{ base: "none", md: "flex" }} px={2} marginTop="10px">
               Search User
@@ -213,8 +214,9 @@ function SideDrawer() {
   
         <Button
           variant="ghost"
+          color="orange"
           onClick={navigateToChats}
-          _hover={{ color: "grey" }}
+          _hover={{ color: "purple" }}
           ml={2}
         >
           <Text d={{ base: "none", md: "flex" }} px={4} marginTop="10px">
@@ -223,11 +225,11 @@ function SideDrawer() {
         </Button>
       </Box>
   
-      <Flex alignItems="center" justifyContent="center" flex="1">
+      <Flex alignItems="center" justifyContent="center" flex="1" color="orange">
         <Button
           variant="ghost"
           onClick={navigateToDashboard}
-          _hover={{ color: "grey" }}
+          _hover={{ color: "purple" }}
         >
           <Text
             fontSize="25px"
@@ -236,7 +238,7 @@ function SideDrawer() {
             marginTop="10px"
             marginLeft="40px"
           >
-            Passportmatch
+            International Date
           </Text>
         </Button>
       </Flex>
@@ -249,8 +251,9 @@ function SideDrawer() {
       >
         <Button
           variant="ghost"
+          color="orange"
           onClick={navigateToSingle}
-          _hover={{ color: "grey" }}
+          _hover={{ color: "purple" }}
           ml={2}
         >
           <Text d={{ base: "none", md: "flex" }} px={4} marginTop="10px">
@@ -260,8 +263,9 @@ function SideDrawer() {
   
         <Button
           variant="ghost"
+          color="orange"
           onClick={navigateToProfile}
-          _hover={{ color: "grey" }}
+          _hover={{ color: "purple" }}
           mr={2}
         >
           {user ? (
@@ -292,7 +296,7 @@ function SideDrawer() {
           )}
               <BellIcon fontSize="2xl" m={1} />
             </MenuButton>
-            <MenuList color="black" bg="white" pl={2}>
+            <MenuList color="purple" bg="white" pl={2}>
               {!notification.length && "No New Messages"}
               {notification.map((notif) => (
                 <MenuItem

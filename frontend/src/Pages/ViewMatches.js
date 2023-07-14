@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from "react-router-dom";
-import SideDrawer from "../components/miscellaneous/SideDrawer";
-import { ChatState } from "../Context/ChatProvider";
+import { useState } from "react";
+import { Input } from "@chakra-ui/input";
+import { Button } from "@chakra-ui/button";
 import axios from "axios";
-import { useDisclosure } from "@chakra-ui/hooks";
 import { useToast } from "@chakra-ui/toast";
+import { ChatState } from "../Context/ChatProvider";
 import ReactCountryFlag from 'react-country-flag';
 import ReactFlagsSelect from 'react-flags-select';
-import { Button } from "@chakra-ui/button";
+import { Link } from "react-router-dom"
 import { Image } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
+import { useDisclosure } from "@chakra-ui/hooks";
 
-export default function Dashboard() {
+function ViewMatches() {
   const [search, setSearch] = useState("");
   const [gender, setGender] = useState("");
   const [minAge, setMinAge] = useState("");
@@ -19,11 +20,17 @@ export default function Dashboard() {
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);
   const [loadingChat, setLoadingChat] = useState(false);
-  const { user, chats, setChats } = ChatState();
+  const [selectedUser, setSelectedUser] = useState(null);
+  const { setSelectedChat, user, setUser, chats, setChats } = ChatState();
 
+  
   const toast = useToast();
   const { onClose } = useDisclosure();
   const navigate = useNavigate();
+
+  const navigateToChats = () => {
+    navigate("/chats");
+  };
 
   const handleGenderChange = (event) => {
     setGender(event.target.value);
@@ -39,10 +46,6 @@ export default function Dashboard() {
 
   const handleMaxAgeChange = (event) => {
     setMaxAge(event.target.value);
-  };
-
-  const handleSearchChange = (event) => {
-    setSearch(event.target.value);
   };
 
   const handleSubmit = async (event) => {
@@ -76,14 +79,12 @@ export default function Dashboard() {
         country,
       };
 
-      const { data } = await axios.get(
-        'https://passportmatch-app.onrender.com/api/user',
-        {
-          params,
-          ...config,
-        }
-      );
+      const { data } = await axios.get("/api/user", {
+        params,
+        ...config,
+      });
 
+      setLoading(false);
       setSearchResult(data);
     } catch (error) {
       toast({
@@ -94,23 +95,7 @@ export default function Dashboard() {
         isClosable: true,
         position: "bottom-left",
       });
-    } finally {
-      setLoading(false);
     }
-  };
-
-  const calculateAge = (dob) => {
-    const birthDate = new Date(dob);
-    const today = new Date();
-    let age = today.getFullYear() - birthDate.getFullYear();
-    const monthDifference = today.getMonth() - birthDate.getMonth();
-    if (
-      monthDifference < 0 ||
-      (monthDifference === 0 && today.getDate() < birthDate.getDate())
-    ) {
-      age--;
-    }
-    return age;
   };
 
   const accessChat = async (userId) => {
@@ -122,17 +107,17 @@ export default function Dashboard() {
           Authorization: `Bearer ${user.token}`,
         },
       };
-
-      const { data } = await axios.post(
-        'https://passportmatch-app.onrender.com/api/chat',
-        { userId },
-        config
-      );
-
+      const { data } = await axios.post(`/api/chat`, { userId }, config);
+  
       if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
-
+  
+      // Set the selected user ID
+      setSelectedUser(userId);
+  
+      setLoadingChat(false);
       onClose();
-
+  
+      // Navigate to the chat page
       navigate("/chats");
     } catch (error) {
       toast({
@@ -143,8 +128,6 @@ export default function Dashboard() {
         isClosable: true,
         position: "bottom-left",
       });
-    } finally {
-      setLoadingChat(false);
     }
   };
 
@@ -152,18 +135,16 @@ export default function Dashboard() {
     <main>
       <div className="imageWrapper">
         <img
-          src="./images/airballoon.jpg"
-          alt="background"
+          src="https://images.pexels.com/photos/592753/pexels-photo-592753.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           className="imageHome"
+          alt="Background"
         />
-
-        <div style={{ width: "100%" }}>
-          {user && <SideDrawer />}
-        </div>
+        
+        
       </div>
-
+      <h1>View Matches</h1>
+      <p>Select filters:</p>
       <form className="formMatches" onSubmit={handleSubmit}>
-        <h1>View Matches</h1>
         <label className="labelMatches" htmlFor="gender">
           Select a gender:
         </label>
@@ -200,7 +181,7 @@ export default function Dashboard() {
           placeholder="Min Age"
         />
 
-        <label className="" htmlFor="maxAge">
+        <label className="labelMatches" htmlFor="maxAge">
           Maximum Age:
         </label>
         <input
@@ -211,77 +192,41 @@ export default function Dashboard() {
           placeholder="Max Age"
         />
 
-        <label className="" htmlFor="search">
-          Search by name
-        </label>
-        <input
-          type="text"
-          id="search"
-          value={search}
-          onChange={handleSearchChange}
-          placeholder="Search"
-          className="inputMatches"
-        />
-
         <button type="submit">Submit</button>
       </form>
 
       <h2>Matched Users:</h2>
-
-      {loading ? (
-        <p>Loading...</p>
-      ) : searchResult.length > 0 ? (
+      {searchResult.length > 0 ? (
         <ul className="user-list">
-          {searchResult.map((user) => (
-            <li key={user._id} className="user-card">
-              <ReactCountryFlag
-                countryCode={user.country}
-                svg
-                className="flagMatches"
-                style={{ width: "300px", height: "200px" }}
-              />
+        {searchResult.map((user) => (
+          <li key={user.id} className="user-card">
+            <div className="user-info">
+              <span className="username">Name: {user.name}</span>
+              <span className="country">Country: {user.country}</span>
+            </div>
+            <div className="user-picture">
               <Image
-                marginTop="-10px"
-                marginLeft="40px"
-                width="70%"
-                height="50%"
-                borderRadius="45%"
+                borderRadius="10%"
+                boxSize="200px"
                 opacity="0.9"
                 src={user.pic}
               />
-              <div style={{ marginTop: "10px" }}>
-                <h2>Name: {user.name}</h2>
-                <h2>Country: {user.country}</h2>
-                <h2>Age: {calculateAge(user.dob)}</h2>
-                <h2>Gender: {user.gender}</h2>
-                <h2>Looking for: {user.genderPreference}</h2>
-                <Link to={`/Profile/${user._id}`}>
-                  <Button
-                    colorScheme="orange"
-                    variant="outline"
-                    marginTop="10px"
-                  >
-                    View Profile
-                  </Button>
-                </Link>
-                <Button
-                  colorScheme="orange"
-                  variant="outline"
-                  marginTop="10px"
-                  marginLeft="10px"
-                  onClick={() => accessChat(user._id)}
-                  isLoading={loadingChat}
-                  disabled={loadingChat}
-                >
-                  {loadingChat ? "Accessing Chat" : "Access Chat"}
-                </Button>
-              </div>
-            </li>
-          ))}
-        </ul>
+            </div>
+            <ReactCountryFlag
+              countryCode={user.country}
+              svg
+              className="flagMatches"
+            />
+            <Button onClick={() => accessChat(user._id)}>Message</Button>
+          </li>
+        ))}
+      </ul>
+      
       ) : (
-        <p>No matching users found.</p>
+        <p>No users found.</p>
       )}
     </main>
   );
 }
+
+export default ViewMatches;

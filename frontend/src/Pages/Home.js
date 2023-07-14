@@ -17,24 +17,25 @@ const Home = () => {
 
     <main className="image-container">
     <div className="imageWrapper">
-        <img src="./images/couple.jpg" className="imageHome" alt="background" />
+        <img src="./images/sunset.jpg" className="imageHome" alt="background" />
     </div>
 
     <Container maxW='xl' centerContent>
       <Box
         d='flex'
         justifyContent="center"
-        p={3}
-        bg={'white'}
+        p={5}
+        bg={'black'}
+        color="white"
         w="100%"
-        m="40px 0 15px 0"
+        m="40px 0 20px 0"
         borderRadius="lg"
         borderWidth="1px"
       >
-        <Text fontSize="4x1" fontFamily="Work sans">Passportmatch</Text>
+        <Text fontSize="4x1" fontFamily="Work sans">International Date</Text>
       </Box>
-      <Box bg="white" w="100%" p={4} borderRadius="lg" color="black" borderWidth="1px">
-        <Tabs variant='soft-rounded' colorScheme='green'>
+      <Box bg="white" w="100%" p={4} borderRadius="lg" color="white" background="black" borderWidth="1px" m="0 0 260px 0">
+        <Tabs variant='soft-rounded' colorScheme='orange'>
           <TabList mb="1em">
             <Tab width="50%">Login</Tab>
             <Tab width="50%">Sign up</Tab>
@@ -51,20 +52,32 @@ const Home = () => {
       </Box>
     </Container>
 
-    <div class="app-info">
-                <h2>About the App</h2>
-                <p>Our app is designed to help users find their match accross the globe. It works by allowing you to create a profile where you can upload a video about yourself that highlights your interests, hobbies, and personality traits. You can also search for other users based on their country and age.</p>
-                <h3>Features</h3>
-                    <ul>
-                        <li>Video Upload: Feature within the profile page allows you to get to know your matches better before meeting in person</li>
-                        <li>Real-Time Messaging: Allows users to communicate with one another on the app. This could be a useful feature for those who are hesitant to meet up in person or those in long-distance relationships</li>
-                        <li>Search Method: Ability to search users via age and country of origin</li>
-                    </ul>
-                <h3>Differences from other dating apps</h3>
-                <p>Compatibility-based matching: Instead of just relying on swiping and basic profile information, Passportmatch allows its users to upload a video of themselves to provide potential matches a better view of your personality traits, interests, and values. This could lead to more meaningful matches and more successful relationships.</p>
-                <h3>Message Board</h3>
-                <p>We are currently developing a message board where users can post anything they desire for other users to see, based on the continental region</p>
-            </div>
+    <div className="app-info">
+        <div className="couple-image-container">
+          <img src="./images/coupleimage.jpeg" alt="Couple" className="couple-image" />
+        </div>
+        <div className="video-and-text-container">
+          <video src="./images/globe.mp4" className="videoGlobe" autoPlay loop muted></video>
+          <div className="text-container">
+            <h2>Grab your passport</h2>
+            <h3>Looking for someone, somewhere? Let us help you...</h3>
+          </div>
+        </div>
+        <ul className="video-description-list">
+          <li>
+            <video src="./images/watchvideo.mp4" className="videoHome" autoPlay loop muted></video>
+            <p>Video Upload: Sometimes a photo is just not enough</p>
+          </li>
+          <li>
+            <video src="./images/messagevideo.mp4" className="videoHome" autoPlay loop muted></video>
+            <p>Real-Time Messaging: Initiate the dialogue</p>
+          </li>
+          <li>
+            <video src="./images/searchvideo.mp4" className="videoHome" autoPlay loop muted></video>
+            <p>Find your match based on your criteria</p>
+          </li>
+        </ul>
+      </div>
 
             <section class="testimonials">
                 <h2>What Our Users Say</h2>
@@ -90,8 +103,14 @@ const Home = () => {
                 </div>
             </section>
 
-            <section>
-                <img src="./images/globe.jpg" alt="couple" className="imgCoupleSitting" />
+            <section className="couple-sitting-container">
+              <img src="./images/purpleimage.jpg" alt="couple" className="imgCoupleSitting" />
+              <div className="download-now-container">
+              <div className="download-now">
+              <p>Download Now</p>
+              <div className="blank-box"></div> {/* Replace with Google Play logo */}
+              </div>
+              </div>
             </section>
 
             <section class="social-media">
@@ -109,8 +128,6 @@ const Home = () => {
                 </a>
             
             </section>
-
-    
 
     </main>
   );

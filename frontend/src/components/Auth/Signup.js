@@ -3,10 +3,25 @@ import axios from "axios";
 import { VStack } from '@chakra-ui/layout';
 import { FormControl, FormLabel } from '@chakra-ui/form-control';
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
-import { Button, Select } from '@chakra-ui/react';
+import { Button, Select, extendTheme, ChakraProvider} from '@chakra-ui/react';
 import { useToast } from '@chakra-ui/react';
 import { useNavigate } from "react-router-dom";
 import ReactFlagsSelect from 'react-flags-select';
+
+const customTheme = extendTheme({
+  components: {
+    Select: {
+      variants: {
+        filled: {
+          field: {
+            bg: "black",
+            color: "white",
+          },
+        },
+      },
+    },
+  },
+});
 
 const Signup = () => {
   const [name, setName] = useState();
@@ -193,9 +208,11 @@ const Signup = () => {
       });
       setLoading(false);
     }
+
   };
 
   return (
+    <ChakraProvider theme={customTheme}>
     <VStack spacing='5px'>
       <FormControl id='first-name' isRequired>
         <FormLabel>Name</FormLabel>
@@ -237,7 +254,7 @@ const Signup = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick}>
+            <Button h="1.75rem" size="sm" color="black" onClick={handleClick}>
               {show ? "Hide" : "Show"}
             </Button>
           </InputRightElement>
@@ -253,7 +270,7 @@ const Signup = () => {
             onChange={(e) => setConfirmpassword(e.target.value)}
           />
           <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick}>
+            <Button h="1.75rem" size="sm" color="black" onClick={handleClick}>
               {show ? "Hide" : "Show"}
             </Button>
           </InputRightElement>
@@ -261,7 +278,7 @@ const Signup = () => {
       </FormControl>
 
       <FormControl id="country">
-        <FormLabel>Country</FormLabel>
+        <FormLabel className="formlabel">Country</FormLabel>
         <ReactFlagsSelect
           name="country"
           id="country"
@@ -292,7 +309,7 @@ const Signup = () => {
           value={gender}
           onChange={(e) => setGender(e.target.value)}
         >
-          <option value="male">Male</option>
+          <option value="male" >Male</option>
           <option value="female">Female</option>
           <option value="other">Other</option>
         </Select>
@@ -320,7 +337,7 @@ const Signup = () => {
       </FormControl>
 
       <Button
-        colorScheme="blue"
+        colorScheme="orange"
         width="100%"
         style={{ marginTop: 15 }}
         onClick={submitHandler}
@@ -329,6 +346,7 @@ const Signup = () => {
         Sign Up
       </Button>
     </VStack>
+    </ChakraProvider>
   );
 };
 
