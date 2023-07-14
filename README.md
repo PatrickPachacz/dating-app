@@ -20,7 +20,7 @@ International dating app which allows users to search and message other potentia
 <img src="screenshots/Homepage.png" />
 <img src="screenshots/homepage2.png" />
 
-![Signup](https://github.com/PatrickPachacz/dating-app/assets/123042779/b24c0c01-84b0-49fc-9631-add5ee94a7ac)
+![homepagegif](https://github.com/PatrickPachacz/dating-app/assets/123042779/59f3292a-270d-4113-9a99-8120acaac8bb)
 
 # Dashboard 
 * Sidedrawer (navbar) allowing users to navigate between other features of app
