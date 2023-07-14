@@ -21,23 +21,52 @@
 	height: 100%;
 	z-index: -1;
   }
-  
-  .container {
-	position: relative;
-	width: 100px; /* set the width of your container */
-  }
+
   
   .app-info {
-	margin-top: 20%;
-	padding: 10px;
+	margin-top: 50px;
+	font-size: 16px;
+	display: inline-block;
+	padding-top: 5%;
+	padding-bottom: 5%;
 	border-bottom: 1px solid #ccc;
-	color: grey;
+	color: rgb(255, 255, 255);
 	background-color: black;
+	width: 100%;
+  }
+
+  #app-info:not(.couple-image){
+	text-align: left;
+	
+  }
+
+  .couple-image {
+	width: 50%;
+  	height: 800px;
+  	object-fit: cover;
+	float: right;
+	border: 2px outset rgb(132, 28, 28);
+	border-image: linear-gradient(to right, orange, purple);
+	border-image-slice: 1;
+}
+  
+.video-and-text-container {
+	display: flex;
+	align-items: center;
+  }
+  
+  .text-container {
+	flex: 0 0 50%;
+	/* Adjust the width as needed */
+	margin-left: 20px;
   }
   
   .app-info h2 {
 	font-size: 24px;
 	margin-top: 0;
+	margin-right: 70px;
+	color: orange;
+	font-weight: bold;
   }
   
   .app-info h3 {
@@ -46,19 +75,50 @@
   }
   
   .app-info ul {
-	list-style: disc;
-	margin-left: 20px;
+	list-style: none;
+	margin-top: 20px;
+	margin-left: 50px;
   }
   
   .app-info li {
-	margin-bottom: 5px;
+	margin-bottom: 100px;
+	padding-right: 60px;
+  }
+
+  .videoglobe {
+	margin-left: 0px;
+  }
+
+  .video-description-list {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding-left: 100px;
+	list-style: none;
+  }
+  
+  .video-description-list li {
+	display: flex;
+	align-items: center;
+	margin-top: 30px;
+  }
+  
+  .videoHome {
+	max-width: 35%;
+	border-radius: 40%;
+	margin-right: 20px;
   }
   
   .testimonials {
 	background-color: black;
-	color: white;
+	color: orange;
 	padding: 50px;
+	font-size: 24px;
 	text-align: center;
+  }
+
+  .testimonials h2{
+	font-weight: bold;
   }
   
   .testimonial-container {
@@ -79,7 +139,7 @@
 	background-color: black;
 	border-left: 1px solid rgb(16, 15, 15);
 	border-right: 1px solid rgb(16, 15, 15);
-	color: grey;
+	color: white;
 	border-radius: 40px;
 	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 	padding: 20px;
@@ -97,6 +157,12 @@
 	font-weight: bold;
 	margin-top: 0;
   }
+
+  .testimonial h2 {
+	font-size: 36px;
+	font-weight: bold;
+	margin-top: 0;
+  }
   
   .imgCoupleSitting {
 	width: 100%;
@@ -104,6 +170,32 @@
 	position: relative;
   }
   
+  .couple-sitting-container {
+	position: relative;
+	text-align: center;
+  }
+  
+  .download-now-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+  }
+  
+  .download-now {
+	display: flex;
+	align-items: center;
+	background-color: orange;
+	padding: 10px;
+	border-radius: 8px;
+  }
+  
+  .blank-box {
+	width: 100px; /* Adjust the width as needed */
+	height: 50px; /* Adjust the height as needed */
+	background-color: white; /* Replace with Google Play logo or add a background image */
+	margin-left: 10px; /* Add margin between "Download Now" and the blank box */
+  }
   
   .social-media {
 	display: flex;
@@ -124,6 +216,10 @@
   
   .social-media a:hover {
 	color: #3b5998;
+  }
+
+  .custom-select select {
+	background-color: black;
   }
   
   /* Dashboard */
