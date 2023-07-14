@@ -18,9 +18,14 @@ International dating app which allows users to search and message other potentia
 * Login / Signup built in component - allows users to add information ranging from country of origin and age to their personal image and video
 * Brief information describing app outline and features to potential clients
 <img src="screenshots/Homepage.png" />
-<img src="screenshots/homepage2.png" />
 
 ![homepagegif](https://github.com/PatrickPachacz/dating-app/assets/123042779/59f3292a-270d-4113-9a99-8120acaac8bb)
+
+
+<img src="screenshots/homepage2.png" />
+<img src="screenshots/homepage3.png" />
+
+
 
 # Dashboard 
 * Sidedrawer (navbar) allowing users to navigate between other features of app
