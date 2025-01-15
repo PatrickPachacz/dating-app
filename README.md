@@ -1,4 +1,5 @@
 # dating-app
+
 International dating app which allows users to search and message other potential matches from across the globe. App built using MERN (data stored in Mongo DB). You can access the demo and sign up on the site here: https://passportmatch.netlify.app
 
 # App Features
@@ -9,9 +10,6 @@ International dating app which allows users to search and message other potentia
 * Ability for user to update and change their picture and self video
 * Notification alert when receiving message
 * Applicable for smaller screens
-
-# In process
-* Currently adding message board to allow users to post messages + upload images regarding anything they want for other users to see (based on continental selection)
 
 # App Walkthrough
 # Homepage
